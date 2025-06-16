@@ -9,6 +9,8 @@ import {
   elvisRooms,
   fecthPoolDetails,
   fetchHotelpool,
+  getBooking,
+  getHotelBooking,
   getMenuId,
   hotelId,
   hotels,
@@ -34,6 +36,7 @@ import {
 const router = express.Router()
 
 router.get('/hotels', hotels)
+router.get('/bookings', getHotelBooking)
 router.get('/nestib-rooms', nestIBRooms)
 router.get('/asaba-rooms', asabaRooms)
 router.get('/royalparlane-rooms', royalparklaneRooms)

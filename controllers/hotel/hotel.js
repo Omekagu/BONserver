@@ -37,7 +37,7 @@ export const hotelId = async (req, res) => {
     if (!hotel) return res.status(404).json({ error: 'Hotel not found' })
     res.json(hotel)
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch hotel' })
+    res.status(500).json({ error: 'Failed to fetch hotel via ID' })
   }
 }
 
@@ -390,5 +390,17 @@ export const fecthPoolDetails = async (req, res) => {
   } catch (err) {
     console.error(err)
     res.status(500).json({ message: 'Error fetching room details' })
+  }
+}
+
+export const getHotelBooking = async (req, res) => {
+  try {
+    const booking = await Booking.find()
+    res.json(booking)
+  } catch (error) {
+    console.error('Error fetching bookings:', error)
+    res
+      .status(500)
+      .json({ message: 'Error fetching bookings', error: error.message })
   }
 }
