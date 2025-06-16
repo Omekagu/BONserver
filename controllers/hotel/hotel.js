@@ -19,28 +19,6 @@ import {
   poolTRANSTELL
 } from '../../utilities/pool.js'
 
-// Get list of hotels
-export const hotels = async (req, res) => {
-  try {
-    const hotels = await Hotel.find()
-    res.json(hotels)
-    // console.log(hotels)
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch hotels' })
-  }
-}
-
-// Get hotel by ID
-export const hotelId = async (req, res) => {
-  try {
-    const hotel = await Hotel.findById(req.params.id)
-    if (!hotel) return res.status(404).json({ error: 'Hotel not found' })
-    res.json(hotel)
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch hotel via ID' })
-  }
-}
-
 // Hotel search by name
 export const SearchHotelsName = async (req, res) => {
   try {

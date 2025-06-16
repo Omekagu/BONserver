@@ -9,11 +9,8 @@ import {
   elvisRooms,
   fecthPoolDetails,
   fetchHotelpool,
-  getBooking,
   getHotelBooking,
   getMenuId,
-  hotelId,
-  hotels,
   hyattiRooms,
   ikejaresRooms,
   imperialRooms,
@@ -35,8 +32,7 @@ import {
 } from '../../controllers/hotel/bonamiCard.js'
 const router = express.Router()
 
-router.get('/hotels', hotels)
-router.get('/bookings', getHotelBooking)
+router.get('/bookings/list/booking', getHotelBooking)
 router.get('/nestib-rooms', nestIBRooms)
 router.get('/asaba-rooms', asabaRooms)
 router.get('/royalparlane-rooms', royalparklaneRooms)
@@ -52,7 +48,6 @@ router.get('/transtell-rooms', transtellRooms)
 router.get('/ikejares-rooms', ikejaresRooms)
 router.get('/search/pool/:pool', fetchHotelpool)
 router.get('/:pool/:id', fecthPoolDetails)
-router.get('/:id', hotelId)
 router.get('/search/:name', SearchHotelsName)
 router.get('/search/countries', SearchCountry)
 router.get('/search/state/:state', SearchState)
