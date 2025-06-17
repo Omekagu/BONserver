@@ -370,15 +370,3 @@ export const fecthPoolDetails = async (req, res) => {
     res.status(500).json({ message: 'Error fetching room details' })
   }
 }
-
-export const getHotelBooking = async (req, res) => {
-  try {
-    const booking = await Booking.find()
-    res.json(booking)
-  } catch (error) {
-    console.error('Error fetching bookings:', error)
-    res
-      .status(500)
-      .json({ message: 'Error fetching bookings', error: error.message })
-  }
-}

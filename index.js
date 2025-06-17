@@ -8,6 +8,7 @@ import authRoutes from './routes/users/authentication.js'
 import usersRoutes from './routes/users/user.js'
 import adminRoutes from './routes/admin/adminAuth.js'
 import hotelRoutes from './routes/hotel/hotel.js'
+import bookingRoutes from './routes/hotelBooking/booking.js'
 import {
   poolASABA,
   poolASOKORO,
@@ -40,6 +41,7 @@ app.use('/auth', authRoutes)
 app.use('/user', usersRoutes)
 app.use('/admin', adminRoutes)
 app.use('/hotel', hotelRoutes)
+app.use('/booking', bookingRoutes)
 
 const io = new Server(server, {
   cors: {
