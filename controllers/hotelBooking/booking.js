@@ -5,7 +5,7 @@ import Booking from '../../model/Booking.js'
 export const getBooking = async (req, res) => {
   try {
     const booking = await Booking.find()
-      .populate('userId', 'email firstname surname')
+      .populate('userId', 'email firstname surname profileImage')
       .sort({ createdAt: -1 })
     res.json(booking)
   } catch (error) {
