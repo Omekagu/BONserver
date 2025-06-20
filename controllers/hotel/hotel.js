@@ -230,10 +230,9 @@ export const bookedUserId = async (req, res) => {
         .status(400)
         .json({ status: 'error', message: 'User ID is required' })
     }
-
     const bookings = await Booking.find({ userId }) // Fetch only the user's bookings
-
     res.status(200).json({ status: 'ok', data: bookings })
+    console.log('Bookings fetched successfully:', bookings)
   } catch (error) {
     console.error('🔥 Booking Fetch Error:', error)
     res.status(500).json({ status: 'error', message: error.message })
